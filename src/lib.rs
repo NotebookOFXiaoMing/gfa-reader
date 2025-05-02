@@ -324,7 +324,7 @@ impl<
                 let mut z1: Gfa<T, S, U> = Gfa::new();
                 for a in x.iter() {
                     let file = File::open(file_name).unwrap();
-                    let mut reader = BufReader::new(file);
+                    let reader = BufReader::new(file);
                     reader.seek(SeekFrom::Start(a.0 as u64)).unwrap();
                     let mut pos = a.0;
                     for line in reader.lines() {
